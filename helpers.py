@@ -37,12 +37,12 @@ def login_required(f):
     return decorated_function
 
 def convert_code(code):
-    connection = pymysql.connect(host='34.171.138.243',
-                             user='jbr46',
-                             password='constituencies',
-                             database='constituencies',
-                             charset='utf8',
-                             cursorclass=pymysql.cursors.DictCursor)
+    connection = pymysql.connect(unix_socket='/cloudsql/mileage-364019:us-central1:mileage',
+                            user='jbr46',
+                            password='constituencies',
+                            database='constituencies',
+                            charset='utf8',
+                            cursorclass=pymysql.cursors.DictCursor)
     with connection:
         with connection.cursor() as cursor:
             sql = "SELECT `station` FROM `stations` WHERE `code` = %s"
@@ -53,12 +53,13 @@ def convert_code(code):
 
 
 def convert_station(station):
-    connection = pymysql.connect(host='34.171.138.243',
-                             user='jbr46',
-                             password='constituencies',
-                             database='constituencies',
-                             charset='utf8',
-                             cursorclass=pymysql.cursors.DictCursor)
+    connection = pymysql.connect(unix_socket='/cloudsql/mileage-364019:us-central1:mileage',
+                            #host='34.171.138.243',
+                            user='jbr46',
+                            password='constituencies',
+                            database='constituencies',
+                            charset='utf8',
+                            cursorclass=pymysql.cursors.DictCursor)
     with connection:
         with connection.cursor() as cursor:
             sql = "SELECT `code` FROM `stations` WHERE `station` = %s"

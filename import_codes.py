@@ -2,7 +2,7 @@ import csv
 import pymysql.cursors
 
 def main():
-    connection = pymysql.connect(host='34.171.138.243',
+    connection = pymysql.connect(unix_socket='/cloudsql/mileage-364019:us-central1:mileage',
                              user='jbr46',
                              password='mileage',
                              database='mileage',
