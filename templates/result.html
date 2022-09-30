@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Mileage calculation
+{% endblock %}
+
+{% block main %}
+    <div>
+        <p>The shortest distance from {{ origin }} to {{ destination }} is {{ distance }} miles.</p>
+        <p>The shortest path is: {{ path }}</p>
+    </div>
+    <div>
+        <a href="/"><button class="btn btn-primary">Calculate another journey</button></a>
+    </div>
+
+{% endblock %}

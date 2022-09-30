@@ -1,0 +1,5 @@
+GET https://opendata.nationalrail.co.uk/api/staticfeeds/2.0/routeing HTTP/1.1
+Content-Type: application/json
+Accept: */*
+Host: opendata.nationalrail.co.uk
+X-Auth-Token: benji87002@gmail.com:1663766096000:_GWxbp-xrDiQB--nyfnWJo_7kHVkFubE9jlLX4Du_3E=
